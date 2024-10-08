@@ -1,3 +1,5 @@
+# train.py
+
 from database import salvar_conversa  # Importa a função salvar_conversa do módulo database
 
 # Função para adicionar uma conversa ao banco de dados

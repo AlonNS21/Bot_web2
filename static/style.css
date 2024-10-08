@@ -30,6 +30,7 @@ body {
     padding: 10px;
     overflow-y: auto;
     border-bottom: 1px solid black;
+    max-width: 100%; /* Garante que o chat-box não ultrapasse os limites da tela */
 }
 
 .message {
@@ -37,6 +38,9 @@ body {
     padding: 10px;
     border-radius: 10px;
     max-width: 70%;
+    word-wrap: break-word; /* Garante que o texto quebrará em palavras longas */
+    overflow-wrap: break-word; /* Garante que o link será quebrado em múltiplas linhas se necessário */
+    white-space: pre-wrap; /* Mantém quebras de linha e permite que o texto se ajuste automaticamente */
 }
 
 .user-message {
@@ -82,4 +86,11 @@ a {
 
 a:hover {
     color: darkblue;
+}
+
+.bot-message a {
+    color: blue;
+    text-decoration: underline;
+    word-wrap: break-word; /* Garante que o link não estourará o limite do balão */
+    overflow-wrap: break-word;
 }

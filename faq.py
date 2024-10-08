@@ -1,50 +1,6 @@
-# from sklearn.feature_extraction.text import TfidfVectorizer
-# from sklearn.metrics.pairwise import cosine_similarity
-# import numpy as np
-
-# # Perguntas e respostas armazenadas
-# faq = {
-#     "qual é o seu nome": "Meu nome é ChatBot!",
-#     "como você está": "Estou funcionando perfeitamente, obrigado por perguntar!",
-#     "qual é a capital da bahia": "A capital da Bahia é Salvador.",
-#     "qual a capital da frança": "A capital da França é Paris."
-# }
-
-# # Vetoriza as perguntas armazenadas
-# vectorizer = TfidfVectorizer()
-
-# def carregar_perguntas():
-#     return list(faq.keys())  # Retorna as perguntas da base FAQ
-
-# perguntas = carregar_perguntas()
-# X = vectorizer.fit_transform(perguntas)  # Vetoriza as perguntas
 
 
-# def obter_resposta(pergunta_usuario):
-#     # Transforma a pergunta do usuário em um vetor
-#     pergunta_usuario_vetor = vectorizer.transform([pergunta_usuario])
-    
-#     # Calcula a similaridade entre a pergunta do usuário e as perguntas armazenadas
-#     similaridades = cosine_similarity(pergunta_usuario_vetor, X)
-    
-#     # Encontra o índice da pergunta mais semelhante
-#     indice_mais_semelhante = np.argmax(similaridades)
-    
-#     # Verifica o valor da maior similaridade
-#     maior_similaridade = similaridades[0][indice_mais_semelhante]
-    
-#     # Define um limiar de similaridade para garantir que a resposta seja relevante
-#     if maior_similaridade >= 0.5:  # Ajuste o valor do limiar conforme necessário
-#         pergunta_mais_proxima = perguntas[indice_mais_semelhante]
-#         return faq[pergunta_mais_proxima]
-#     else:
-#         return "Desculpe, não entendi sua pergunta. Tente perguntar de outra forma."
-
-
-
-# main.py
-
-# main.py
+# faq.py
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np

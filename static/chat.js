@@ -17,7 +17,35 @@ function setUserName() {
     document.getElementById('name-container').style.display = 'none';
     document.getElementById('chat-box').style.display = 'block';
     document.getElementById('input-container').style.display = 'flex';
-    addMessageToChatBox("Bot", `Olá, ${userName}! Como posso ajudar você hoje?`);
+
+    // Lista de mensagens para escolher aleatoriamente
+    const mensagens = [
+        `E ai ${userName}, beleza, em que posso te ajudar?`,
+        `Fala ${userName}, como posso ajudar?`,
+        `Oi ${userName}, tudo bem? Em que posso ser útil?`,
+        `Olá ${userName}, estou aqui para te ajudar, o que você precisa?`,
+        `Hey ${userName}, como posso ser útil hoje?`,
+        `Saudações ${userName}, em que posso te auxiliar?`,
+        `Olá ${userName}, o que você precisa?`,
+        `Hey! ${userName}, Como vai? Vamos espalhar um pouco de magia por aí? Zueira, em que posso ajudar?`,
+        `Oi, ${userName}, beleza? Estou aqui para te guiar, o que você precisa?`,
+        `${userName}, e aí, meu chapa! Preparado para dominar o domínio? Kkkk, o que vai querer saber hoje?`,
+        `Olá! ${userName}, como anda a vida? Estou pronto para te auxiliar hoje!`,
+        `${userName} parceiro(a)! Vamos botar pra quebrar? O que vai ser hoje?`,
+        `${userName}? E aí, chuchu! Pronto para bater um papo?`,
+        `Olá, ${userName}, estou à disposição para te auxiliar!`,
+        `${userName}, tudo tranquilo? Estou aqui para te ajudar, firme e forte!`,
+        `Ei, ${userName}! Tô aqui para desenrolar qualquer situação!`,
+        `Hey, ${userName}, beleza? Estou pronto para te dar uma força!`,
+        `Olá, pipoca! Bora resolver essas paradas?`,
+        `Oi, pão na chapa! Como posso facilitar o seu dia?`,
+        `Olá, ovo frito! Estou à disposição para te auxiliar!`
+    ];
+
+    // Escolhe uma mensagem aleatória da lista
+    const mensagemAleatoria = mensagens[Math.floor(Math.random() * mensagens.length)];
+
+    addMessageToChatBox("Bot", mensagemAleatoria);
 }
 
 document.getElementById("message").addEventListener("keydown", function(event) {
@@ -76,5 +104,9 @@ function addMessageToChatBox(sender, message) {
 
 function linkify(text) {
     var urlPattern = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    return text.replace(urlPattern, '<a href="$1" target="_blank">$1</a>');
+
+    // Substitui a URL diretamente pelo link formatado com target="_blank"
+    return text.replace(urlPattern, function(url) {
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+    });
 }

@@ -1,3 +1,4 @@
+# ml_model
 from sklearn.feature_extraction.text import TfidfVectorizer  # Importa o vetorizar de texto usando TF-IDF
 from sklearn.naive_bayes import MultinomialNB  # Importa o classificador Naive Bayes
 

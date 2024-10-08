@@ -16,7 +16,7 @@ def resposta_credor_pagamento_fatura():
     pdf_link = "https://drive.google.com/file/d/1yTdpQGjR5--2M_yC3PDal2829CgsoEre/view?usp=drive_link"
     resposta = (
         "Para incluir credor como conta ou pagamento fatura, é necessário enviar um e-mail para a Gerência de Análises e Operações Contabéis (GERAC): gerac@sefaz.ba.gov.br.<br><br>"
-        f"Você pode acessar o <a href='{pdf_link}'>exemplo de formulário em PDF</a>."
+        f"Você pode acessar o {pdf_link}"
     )
     return resposta
 
